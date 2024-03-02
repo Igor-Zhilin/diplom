@@ -4,8 +4,65 @@
     display: flex;
 }
 .main_text{
+    padding-top: 10px;
     font-size: 50px;
+    line-height: 1.2;
 }
 .main_png{
-    padding: 20px 20px 20px 40px;
+    padding: 10px 20px 20px 40px;
+} 
+
+.main_png{
+    border-radius: 20%;
 }
+.but1{
+    padding-bottom: 10px;
+}
+nav.info{
+background-color: #ffa500;
+border-top-left-radius: 50% -50px;
+  border-top-right-radius: 50% -50px;
+  border-bottom-left-radius: 50% 50px;
+  border-bottom-right-radius: 50% 50px;
+  padding: 10px; /* Задайте необходимый отступ */
+}
+.info>p{
+    text-align: center;
+    font-size: 50px;
+}
+.info>div>p{
+    text-align: center;
+    font-size: 30px;
+}
+.city_but{
+    display: flex;
+    justify-content: center;
+}
+.city_but>div{
+    padding-left: 50px;
+    padding-bottom: 15px;
+}
+.city_but>div>button{
+    font-size: 20px;
+}
+
+.nav_gallery>p{
+    text-align: center;
+    font-size: 40px;
+}
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .gallery img {
+    width: 500px; /* Измененная ширина */
+    height: 300px; /* Измененная высота */
+    margin: 10px;
+  }
+  #moreBtn, #hideBtn {
+    margin: 10px;
+  }
+  #hideBtn {
+    display: none; /* Скрыть кнопку "Скрыть" по умолчанию */
+  }
