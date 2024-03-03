@@ -53,21 +53,23 @@
 <nav class="info">
   <p>Контактная информация</p>
   <div><p>Выбирите город:</p></div>
-  <div class="city_but">
-    <div><form action="#"><button onclick="openModal('Белгород')">Белгород</button></form></div>
-    <div><form action="#"><button onclick="openModal('Санкт-Петербург')">Санкт-Петербург</button></form></div>
-    <div><form action="#"><button onclick="openModal('Воронеж')">Воронеж</button></form></div>
-    <div><form action="#"><button onclick="openModal('Калининград')">Калининград</button></form></div>
-  </div>
+  <!-- Кнопки выбора городов -->
+<div class="city_but">
+  <div><button onclick="openModal('Белгород')">Белгород</button></div>
+  <div><button onclick="openModal('Санкт-Петербург')">Санкт-Петербург</button></div>
+  <div><button onclick="openModal('Воронеж')">Воронеж</button></div>
+  <div><button onclick="openModal('Калининград')">Калининград</button></div>
+</div>
 
-  <!-- Модальное окно -->
-  <div id="myModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <h2 id="cityName"></h2>
-      <p id="cityInfo"></p>
-    </div>
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 id="cityName"></h2>
+    <p id="cityInfo"></p> <!-- Информация о городе будет здесь -->
+    <div id="cityMap" style="height: 400px; width: 100%;"></div> <!-- Карта будет здесь -->
   </div>
+</div>
 </nav>
 <nav class="nav_gallery">
   <p>Галерея</p>

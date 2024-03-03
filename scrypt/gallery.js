@@ -59,25 +59,32 @@ function openModal(city) {
   const modal = document.getElementById("myModal");
   const cityName = document.getElementById("cityName");
   const cityInfo = document.getElementById("cityInfo");
+  const cityMap = document.getElementById("cityMap");
   
   cityName.textContent = city; // Устанавливаем название города в модальном окне
 
   // Добавляем информацию о городе
   switch(city) {
     case 'Белгород':
-      cityInfo.textContent = "Белгород — административный центр Белгородской области Российской Федерации, один из крупнейших городов на Центральном Черноземье.";
+      cityInfo.textContent = "Белгород — административный центр Белгородской области.";
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
       break;
     case 'Санкт-Петербург':
-      cityInfo.textContent = "Санкт-Петербург — второй по численности населения город России, крупнейший на северо-западе страны, административный центр Северо-Западного федерального округа.";
+      cityInfo.textContent = "Санкт-Петербург — город федерального значения, культурная столица России.";
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
       break;
-    case 'Воронеж':
-      cityInfo.textContent = "Воронеж — город в России, административный центр Воронежской области и Воронежского района.";
+      case 'Воронеж':
+      cityInfo.textContent = "Вороонеж — город на юге Центральной России, административный центр Воронежской области.";
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
       break;
-    case 'Калининград':
-      cityInfo.textContent = "Калининград — город в России, административный центр Калининградской области и Калининградского района.";
+      case 'Калининград':
+      cityInfo.textContent = "Калининграад — город в России, административный центр Калининградской области, являющийся самым западным областным центром Российской Федерации.";
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
       break;
+    // Для других городов аналогично добавьте нужные информацию и embed
     default:
       cityInfo.textContent = "Информация о городе временно недоступна.";
+      cityMap.innerHTML = "Карта временно недоступна.";
   }
 
   modal.style.display = "block"; // Отображаем модальное окно
