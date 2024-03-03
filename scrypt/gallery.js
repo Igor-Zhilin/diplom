@@ -56,9 +56,9 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function openModal(city) {
-  var modal = document.getElementById("myModal");
-  var cityName = document.getElementById("cityName");
-  var cityInfo = document.getElementById("cityInfo");
+  const modal = document.getElementById("myModal");
+  const cityName = document.getElementById("cityName");
+  const cityInfo = document.getElementById("cityInfo");
   
   cityName.textContent = city; // Устанавливаем название города в модальном окне
 
@@ -85,13 +85,13 @@ function openModal(city) {
 
 // Функция для закрытия модального окна
 function closeModal() {
-  var modal = document.getElementById("myModal");
+  const modal = document.getElementById("myModal");
   modal.style.display = "none"; // Скрываем модальное окно
 }
 
 // Закрытие модального окна при щелчке вне его области
 window.onclick = function(event) {
-  var modal = document.getElementById("myModal");
+  const modal = document.getElementById("myModal");
   if (event.target == modal) {
     modal.style.display = "none";
   }

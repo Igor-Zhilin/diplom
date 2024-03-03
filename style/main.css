@@ -88,7 +88,6 @@ button {
     cursor: pointer; /* Изменяем курсор при наведении */
     transition: all 0.3s ease; /* Плавный переход */
   }
-  
   /* Hover эффект */
   button:hover {
     transform: scale(1.05); /* Увеличение кнопки при наведении */
