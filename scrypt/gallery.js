@@ -54,3 +54,45 @@ document.addEventListener('DOMContentLoaded', function () {
   moreBtn.addEventListener('click', loadMoreImages);
   hideBtn.addEventListener('click', hideImages);
 });
+
+function openModal(city) {
+  var modal = document.getElementById("myModal");
+  var cityName = document.getElementById("cityName");
+  var cityInfo = document.getElementById("cityInfo");
+  
+  cityName.textContent = city; // Устанавливаем название города в модальном окне
+
+  // Добавляем информацию о городе
+  switch(city) {
+    case 'Белгород':
+      cityInfo.textContent = "Белгород — административный центр Белгородской области Российской Федерации, один из крупнейших городов на Центральном Черноземье.";
+      break;
+    case 'Санкт-Петербург':
+      cityInfo.textContent = "Санкт-Петербург — второй по численности населения город России, крупнейший на северо-западе страны, административный центр Северо-Западного федерального округа.";
+      break;
+    case 'Воронеж':
+      cityInfo.textContent = "Воронеж — город в России, административный центр Воронежской области и Воронежского района.";
+      break;
+    case 'Калининград':
+      cityInfo.textContent = "Калининград — город в России, административный центр Калининградской области и Калининградского района.";
+      break;
+    default:
+      cityInfo.textContent = "Информация о городе временно недоступна.";
+  }
+
+  modal.style.display = "block"; // Отображаем модальное окно
+}
+
+// Функция для закрытия модального окна
+function closeModal() {
+  var modal = document.getElementById("myModal");
+  modal.style.display = "none"; // Скрываем модальное окно
+}
+
+// Закрытие модального окна при щелчке вне его области
+window.onclick = function(event) {
+  var modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
