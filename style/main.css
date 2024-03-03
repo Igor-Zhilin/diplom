@@ -18,6 +18,7 @@
 .but1{
     padding-bottom: 10px;
 }
+
 nav.info{
 background-color: #ffa500;
 border-top-left-radius: 50% -50px;
@@ -55,14 +56,40 @@ border-top-left-radius: 50% -50px;
     flex-wrap: wrap;
     justify-content: center;
   }
+
   .gallery img {
     width: 500px; /* Измененная ширина */
     height: 300px; /* Измененная высота */
     margin: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease; /* Плавный переход для непрозрачности */
   }
-  #moreBtn, #hideBtn {
-    margin: 10px;
+
+  .additional {
+    opacity: 0; /* Изначальная непрозрачность для дополнительных изображений */
   }
+
+  #moreBtn {
+    margin: 10px auto; /* Устанавливаем отступы по верхнему и нижнему краям и автоматическое выравнивание по горизонтали */
+    display: block; /* Делаем кнопку блочным элементом, чтобы отступы применялись корректно */
+    text-align: center; /* Выравниваем текст по центру */
+  }
+
   #hideBtn {
+    margin: 10px auto; /* Устанавливаем отступы по верхнему и нижнему краям и автоматическое выравнивание по горизонтали */
     display: none; /* Скрыть кнопку "Скрыть" по умолчанию */
+    text-align: center; /* Выравниваем текст по центру */
+  }
+button {
+    background: linear-gradient(to right, #ff8c00, #ffa500); /* Оранжевый градиент */
+    color: #000; /* Черный цвет текста */
+    border: none; /* Убираем границу */
+    padding: 10px 20px; /* Отступы внутри кнопки */
+    cursor: pointer; /* Изменяем курсор при наведении */
+    transition: all 0.3s ease; /* Плавный переход */
+  }
+  
+  /* Hover эффект */
+  button:hover {
+    transform: scale(1.05); /* Увеличение кнопки при наведении */
   }
