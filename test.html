@@ -48,11 +48,11 @@
 
 <form id="telegramForm" method="post">
   <label for="name">Ваше имя:</label><br>
-  <input type="text" id="name" name="name"><br>
+  <input type="text" id="name" name="name" required><br>
   <label for="phone">Номер телефона:</label><br>
-  <input type="tel" id="phone" name="phone"><br>
+  <input type="tel" id="phone" name="phone" pattern="\+7\d{3}\d{3}\d{4}" placeholder="Формат: +79991234567" required><br>
   <label for="message">Введите ваше сообщение:</label><br>
-  <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
+  <textarea id="message" name="message" rows="4" cols="50" required></textarea><br>
   <input type="submit" value="Отправить">
 </form>
 
@@ -68,12 +68,12 @@
 document.getElementById("telegramForm").addEventListener("submit", function(event) {
   event.preventDefault();
   
-  var name = document.getElementById("name").value;
-  var phone = document.getElementById("phone").value;
-  var message = "Имя: " + name + "\nНомер телефона: " + phone + "\nСообщение: " + document.getElementById("message").value;
-  var botToken = '6733590608:AAGS5Jsl3v3kEKwIizTr30e_T9fpXwyV7W8';
-  var chatId = '1089531314';
-  var url = 'https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(message);
+  const name = document.getElementById("name").value;
+  const phone = document.getElementById("phone").value;
+  const message = "Имя: " + name + "\nНомер телефона: " + phone + "\nСообщение: " + document.getElementById("message").value;
+  const botToken = '6733590608:AAGS5Jsl3v3kEKwIizTr30e_T9fpXwyV7W8';
+  const chatId = '1089531314';
+  const url = 'https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(message);
   
   fetch(url)
     .then(response => response.json())
@@ -81,6 +81,7 @@ document.getElementById("telegramForm").addEventListener("submit", function(even
       console.log(data);
       document.getElementById("modalMessage").textContent = 'Сообщение успешно отправлено в Telegram!';
       document.getElementById("myModal").style.display = "block";
+      document.getElementById("telegramForm").reset(); // Сброс данных формы
     })
     .catch(error => {
       console.error('Ошибка при отправке сообщения:', error);
