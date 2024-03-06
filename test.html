@@ -4,44 +4,102 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Отправка результатов в Telegram</title>
+<style>
+/* Стили для модального окна */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  text-align: center;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+}
+</style>
 </head>
 <body>
 
 <h2>Форма для отправки сообщения в Telegram</h2>
 
 <form id="telegramForm" method="post">
+  <label for="name">Ваше имя:</label><br>
+  <input type="text" id="name" name="name"><br>
+  <label for="phone">Номер телефона:</label><br>
+  <input type="tel" id="phone" name="phone"><br>
   <label for="message">Введите ваше сообщение:</label><br>
   <textarea id="message" name="message" rows="4" cols="50"></textarea><br>
   <input type="submit" value="Отправить">
 </form>
 
+<!-- Модальное окно -->
+<div id="myModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <p id="modalMessage"></p>
+  </div>
+</div>
+
 <script>
 document.getElementById("telegramForm").addEventListener("submit", function(event) {
-  event.preventDefault(); // Предотвращаем отправку формы по умолчанию
+  event.preventDefault();
   
-  // Получаем текст сообщения из формы
-  const message = document.getElementById("message").value;
+  var name = document.getElementById("name").value;
+  var phone = document.getElementById("phone").value;
+  var message = "Имя: " + name + "\nНомер телефона: " + phone + "\nСообщение: " + document.getElementById("message").value;
+  var botToken = '6733590608:AAGS5Jsl3v3kEKwIizTr30e_T9fpXwyV7W8';
+  var chatId = '1089531314';
+  var url = 'https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(message);
   
-  // Замените 'YOUR_BOT_TOKEN' на ваш токен бота
-  const botToken = '6733590608:AAGS5Jsl3v3kEKwIizTr30e_T9fpXwyV7W8';
-  
-  // Замените 'YOUR_CHAT_ID' на ваш идентификатор чата в Telegram
-  const chatId = '1089531314';
-  
-  // Формируем URL для отправки сообщения через API Telegram
-  const url = 'https://api.telegram.org/bot' + botToken + '/sendMessage?chat_id=' + chatId + '&text=' + encodeURIComponent(message);
-  
-  // Отправляем запрос на сервер Telegram
   fetch(url)
     .then(response => response.json())
     .then(data => {
       console.log(data);
-      alert('Сообщение успешно отправлено в Telegram!');
+      document.getElementById("modalMessage").textContent = 'Сообщение успешно отправлено в Telegram!';
+      document.getElementById("myModal").style.display = "block";
     })
     .catch(error => {
       console.error('Ошибка при отправке сообщения:', error);
-      alert('Произошла ошибка при отправке сообщения в Telegram.');
+      document.getElementById("modalMessage").textContent = 'Произошла ошибка при отправке сообщения в Telegram.';
+      document.getElementById("myModal").style.display = "block";
     });
+});
+
+// Закрываем модальное окно при клике на кнопку закрытия
+document.querySelector(".close").addEventListener("click", function() {
+  document.getElementById("myModal").style.display = "none";
+});
+
+// Закрываем модальное окно при клике вне его области
+window.addEventListener("click", function(event) {
+  var modal = document.getElementById("myModal");
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 });
 </script>
 
