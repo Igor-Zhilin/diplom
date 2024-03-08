@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ</title>
+<style>
+.faq {
+  padding: 10px;
+  background-color: #f9f9f9;
+  border-left: 6px solid #555;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.answer {
+  display: none;
+}
+</style>
+</head>
+<body>
+
+<h2>Часто задаваемые вопросы (FAQ)</h2>
+
+<div class="faq" onclick="toggleAnswer('answer1')">
+  <h3>Вопрос 1</h3>
+  <p class="answer" id="answer1">Ответ на вопрос 1.</p>
+</div>
+
+<div class="faq" onclick="toggleAnswer('answer2')">
+  <h3>Вопрос 2</h3>
+  <p class="answer" id="answer2">Ответ на вопрос 2.</p>
+</div>
+
+<div class="faq" onclick="toggleAnswer('answer3')">
+  <h3>Вопрос 3</h3>
+  <p class="answer" id="answer3">Ответ на вопрос 3.</p>
+</div>
+
+<!-- Добавьте другие вопросы и ответы по аналогии -->
+
+<script>
+function toggleAnswer(id) {
+  const answer = document.getElementById(id);
+  if (answer.style.display === 'none') {
+    answer.style.display = 'block';
+  } else {
+    answer.style.display = 'none';
+  }
+}
+</script>
+
+</body>
+</html>
