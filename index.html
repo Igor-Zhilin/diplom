@@ -41,8 +41,11 @@
     <div>
         <p class="main_text">МАСТЕРСКАЯ <br>СЧАСТЛИВЫХ <br>КОМПЬЮТЕРОВ</p>
         <p>Профессионально ремонтируем, прокачиваем и собираем компьютеры по всей России с 2018 года!</p>
-        <div class="but1"><button >Оставить заявку</button></div>
+        <form action="./views/test.html" target="_self">
+          <div class="but1"><button>Оставить заявку</button></div>
+      </form>
 
+      
     </div>
     <div class="main_png">
 <img src="./images/photo1.png" alt="" class="main_png">
@@ -65,8 +68,10 @@
   <div class="modal-content">
     <span class="close" onclick="closeModal()">&times;</span>
     <h2 id="cityName"></h2>
-    <p id="cityInfo"></p> <!-- Информация о городе будет здесь -->
-    <div id="cityMap" style="height: 400px; width: 100%;"></div> <!-- Карта будет здесь -->
+    <div class="flex-container">
+      <div class="city-map" id="cityMap"></div>
+      <div class="city-info" id="cityInfo"></div>
+    </div>
   </div>
 </div>
 </nav>

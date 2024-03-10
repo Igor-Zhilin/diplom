@@ -131,3 +131,19 @@ button {
         color: black;
         text-decoration: none;
       }
+      .modal-content {
+        display: flex;
+        flex-direction: column;
+      }
+      
+      .flex-container {
+        display: flex;
+      }
+      
+      .city-map {
+        flex: 1;
+      }
+      
+      .city-info {
+        flex: 2;
+      }

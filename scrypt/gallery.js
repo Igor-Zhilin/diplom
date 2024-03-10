@@ -67,19 +67,19 @@ function openModal(city) {
   switch(city) {
     case 'Белгород':
       cityInfo.textContent = "Белгород — административный центр Белгородской области.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
       break;
     case 'Санкт-Петербург':
       cityInfo.textContent = "Санкт-Петербург — город федерального значения, культурная столица России.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
       break;
       case 'Воронеж':
       cityInfo.textContent = "Вороонеж — город на юге Центральной России, административный центр Воронежской области.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
       break;
       case 'Калининград':
       cityInfo.textContent = "Калининграад — город в России, административный центр Калининградской области, являющийся самым западным областным центром Российской Федерации.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:100%"></embed>';
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
       break;
     // Для других городов аналогично добавьте нужные информацию и embed
     default:
