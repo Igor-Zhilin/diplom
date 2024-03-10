@@ -2,3 +2,14 @@
 header{
     background-color: #ffa500;
 }
+.head{
+    width: 300px;
+}
+.navbar-nav .nav-link {
+    color: black; /* Цвет текста */
+    transition: color 0.3s; /* Плавное изменение цвета при hover */
+  }
+  
+  .navbar-nav .nav-link:hover {
+    color: rgb(255, 255, 255); /* Цвет текста при hover */
+  }

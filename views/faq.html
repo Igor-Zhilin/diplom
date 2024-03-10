@@ -1,54 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FAQ</title>
-<style>
-.faq {
-  padding: 10px;
-  background-color: #f9f9f9;
-  border-left: 6px solid #555;
-  margin-top: 10px;
-  cursor: pointer;
-}
-
-.answer {
-  display: none;
-}
-</style>
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/main.css">
+    <link rel="stylesheet" href="../style/header.css">
+    <link rel="stylesheet" href="../style/form.css">
+    <link rel="stylesheet" href="../style/faq.css">
+    <title>FAQ</title>
+  </head>
+  <header>
+  <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="../index.html">
+                <img src="../images/logo.png" alt="" width="120" height="90" class="d-inline-block align-text-top">
+              </a>
+            </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav head">
+            <li class="nav-item">
+              <a class="link-dark nav-link" aria-current="page" href="../index.html">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="link-dark nav-link" href="./test.html">Оставить заявку</a>
+            </li>
+            <li class="nav-item">
+              <a class="link-dark nav-link" href="./faq.html">FAQ</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>   
+  </header>
 <body>
 
 <h2>Часто задаваемые вопросы (FAQ)</h2>
-
+<div class="grani_faq">
 <div class="faq" onclick="toggleAnswer('answer1')">
-  <h3>Вопрос 1</h3>
-  <p class="answer" id="answer1">Ответ на вопрос 1.</p>
+  <h3>«Что, если меня не устроит озвученная после проведенной диагностики стоимость услуги?»</h3>
+  <p class="answer" id="answer1">Все просто. Вы отказываетесь от дальнейших услуг.</p>
 </div>
 
 <div class="faq" onclick="toggleAnswer('answer2')">
-  <h3>Вопрос 2</h3>
-  <p class="answer" id="answer2">Ответ на вопрос 2.</p>
+  <h3>«Скажите, какие виды работ по обслуживанию компьютеров Вы осуществляете?»</h3>
+  <p class="answer" id="answer2">Наши специалисты выполняют полный спектр работ по ремонту, сборке, настройке компьютеров и установке ПО.</p>
 </div>
 
 <div class="faq" onclick="toggleAnswer('answer3')">
-  <h3>Вопрос 3</h3>
-  <p class="answer" id="answer3">Ответ на вопрос 3.</p>
+  <h3>«В какое время ко мне может приехать курьер сервисного центра?»</h3>
+  <p class="answer" id="answer3">Наш курьер сервисного центра приедет в удобное для Вас время туда, куда Вы ему скажете.</p>
 </div>
 
-<!-- Добавьте другие вопросы и ответы по аналогии -->
+<div class="faq" onclick="toggleAnswer('answer4')">
+  <h3>«Где вы осуществляете ремонт и обслуживание компьютеров?»</h3>
+  <p class="answer" id="answer4">В одной из наших мастерских, либо на дому у заказчика.</p>
+</div>
 
-<script>
-function toggleAnswer(id) {
-  const answer = document.getElementById(id);
-  if (answer.style.display === 'none') {
-    answer.style.display = 'block';
-  } else {
-    answer.style.display = 'none';
-  }
-}
-</script>
+<div class="faq" onclick="toggleAnswer('answer5')">
+  <h3>«Сколько стоит ремонт ноутбука?»</h3>
+  <p class="answer" id="answer5">Любая стоимость озвучивается только после диагностики, фантазировать по телефону о стоимости ремонта - непрофессионально.</p>
+</div>
 
+<div class="faq" onclick="toggleAnswer('answer6')">
+  <h3>«Сколько времени занимает диагностика и ремонт?»</h3>
+  <p class="answer" id="answer6">В большинстве случаев, если ноутбук или компьютер включается, диагностика занимает от 1 часа до 3 рабочих дней, но как правило, стараю проводить в первые сутки, все зависит от загруженности.</p>
+</div>
+
+<div class="faq" onclick="toggleAnswer('answer7')">
+  <h3>«А можете при мне посмотреть что с компьютером / ноутбуком?»</h3>
+  <p class="answer" id="answer7">В ремонтную зону никого не впускаю, так как много дорогой и чужой техники, за которую несу ответственность, от сюда и ответ НЕТ. </p>
+</div>
+
+<div class="faq" onclick="toggleAnswer('answer8')">
+  <h3>«А можете быстро починить компьютер или ноутбук? В течение дня?»</h3>
+  <p class="answer" id="answer8">В некоторых случаях это возможно, да и сам я в этом  заинтересован, но не во всех случаях это возможно. Если ваш компьютер/ноутбук не включается или неисправность не постоянная, то в этих случаях быстро не получиться. </p>
+</div>
+
+<div class="faq" onclick="toggleAnswer('answer9')">
+  <h3>«У меня менее 55.000 ребулей для сборки ПК. Можно ли за эти деньги собрать ПК у вас?»</h3>
+  <p class="answer" id="answer9">Да, собрать иожно. Но в данном бюджете уже стоит рассматривать БУ комплектующие, чтобы сборка получилась оптимально мощная.</p>
+</div>
+
+<div class="faq" onclick="toggleAnswer('answer10')">
+  <h3>«Работаете с юр лицами?»</h3>
+  <p class="answer" id="answer10">Да, работаем.</p>
+</div>
+
+</div>
+
+<footer
+class=" text-lg-start text-black"
+style="
+background: rgb(255,255,255);
+background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(255,165,0,1) 47%);"
+>
+<div class="container p-4 pb-0">
+<section class="">
+<div class="row">
+<div class="col-md-3 col-lg-3 col-xl-3 mx-auto mt-3">
+  <h6 class="text-uppercase mb-4 font-weight-bold">
+    Компьютерная мастерская HappyPC
+  </h6>
+  <p>
+    Профессионально ремонтируем, прокачиваем и собираем компьютеры по всей России с 2018 года!
+  </p>
+</div>
+<hr class="w-100 clearfix d-md-none" />
+<div class="col-md-2 col-lg-2 col-xl-2 mx-auto mt-3">
+  <h6 class="text-uppercase mb-4 font-weight-bold">О нас</h6>
+  <p>
+    <a class="text-black link-dark" href="../index.html#main">Главная</a>
+  </p>
+  <p>
+    <a class="text-black link-dark" href="../index.html#contact">Расписание</a>
+  </p>
+  <p>
+    <a class="text-black link-dark" href="../index.html#contact">Где находимся</a>
+  </p>
+</div>
+<hr class="w-100 clearfix d-md-none" />
+<hr class="w-100 clearfix d-md-none" />
+<div class="col-md-4 col-lg-3 col-xl-3 mx-auto mt-3">
+  <h6 class="text-uppercase mb-4 font-weight-bold">Контакты</h6>
+  <p><i class="fas fa-home mr-3"></i> Белгород - 8 904 088 88 88</p>
+  <p><i class="fas fa-envelope mr-3"></i> Санкт-Петербург - 8 904 044 44 44</p>
+  <p><i class="fas fa-phone mr-3"></i> Воронеж - 8 996 436 36 36</p>
+  <p><i class="fas fa-phone mr-3"></i> Калининград - 8 966 039 39 39</p>
+</div>
+</div>
+</section>
+<hr class="my-3">
+<section class="p-3 pt-0">
+<div class="row d-flex align-items-center">
+<div class="col-md-7 col-lg-8 text-center text-md-start">
+  <div >
+    © 2024 HappyPC. Все права защищены.  
+  </div>
+</div>
+<div class="col-md-5 col-lg-4 ml-lg-0 text-center text-md-end">
+  <div class="header_logo_flex">
+    <div><a href="https://vk.com/muzei_peresheika"><img src="./image/vk-logo.png" alt="" class="head_logo"></a></div>
+    <div><a href="https://www.youtube.com/channel/UCB0Msej1hYHItmhLe5W6uoQ"><img src="./image/youtube-logo.png" alt="" class="head_logo"></a></div>
+    <div><a href="adres.html"><img src="./image/map-logo.png" alt="" class="head_logo"></a></div>
+    <div><a href="mailto:izilin33@gmail.com"><img src="./image/email-logo.png" alt="" class="head_logo"></a></div>
+  </div>
+</div>
+</div>
+</section>
+</div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="../scrypt/faq.js"></script>
 </body>
 </html>

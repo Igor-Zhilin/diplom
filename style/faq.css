@@ -1,0 +1,22 @@
+
+.faq {
+    padding: 10px 20px; /* Отступы по бокам */
+    background-color: #ffa500;
+    border-left: 6px solid #555;
+    margin-top: 10px;
+    cursor: pointer;
+    border-radius: 10px; /* Скругление углов */;
+  }
+  
+  .answer {
+    display: none;
+    font-size: 20px; /* Увеличение размера текста */
+  }
+  h2{
+    text-align: center;
+    padding-top: 10px;
+
+  }
+  .grani_faq{
+    margin: 20px;
+  }

@@ -9,9 +9,9 @@ document.getElementById("telegramForm").addEventListener("submit", function(even
     const selectedCity = cityElement.options[cityElement.selectedIndex].text;
     let message = "";
   
-    if (selectedOption === "Опция 1" || selectedOption === "Опция 3") {
+    if (selectedOption === "Ремонт ПК/Ноутбука" || selectedOption === "Задать вопрос") {
       message = "Имя: " + name + "\nНомер телефона: " + phone + "\nОпция: " + selectedOption + "\nГород: " + selectedCity + "\nСообщение: " + document.getElementById("message").value;
-    } else if (selectedOption === "Опция 2") {
+    } else if (selectedOption === "Сборка ПК") {
       message = "Имя: " + name + "\nНомер телефона: " + phone + "\nОпция: " + selectedOption + "\nГород: " + selectedCity + "\nСумма: " + document.getElementById("amount").value + "\nСообщение: " + document.getElementById("message").value;
     }
     
@@ -23,13 +23,13 @@ document.getElementById("telegramForm").addEventListener("submit", function(even
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        document.getElementById("modalMessage").textContent = 'Сообщение успешно отправлено в Telegram!';
+        document.getElementById("modalMessage").textContent = 'Форма обратной связи отправлена, ответим в кратчайшие сроки!';
         document.getElementById("myModal").style.display = "block";
         document.getElementById("telegramForm").reset(); // Сброс данных формы
       })
       .catch(error => {
         console.error('Ошибка при отправке сообщения:', error);
-        document.getElementById("modalMessage").textContent = 'Произошла ошибка при отправке сообщения в Telegram.';
+        document.getElementById("modalMessage").textContent = 'Произошла ошибка, попробуйте позже';
         document.getElementById("myModal").style.display = "block";
       });
   });
