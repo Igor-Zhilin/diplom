@@ -1,7 +1,6 @@
 .main{
-    width: 700px;
-    padding-left: 400px;
-    display: flex;
+  display: flex;
+  justify-content: center;
 }
 .main_text{
     padding-top: 10px;
@@ -9,12 +8,11 @@
     line-height: 1.2;
 }
 .main_png{
+  max-width: 100%;
     padding: 10px 20px 20px 40px;
+    border-radius: 20%;
 } 
 
-.main_png{
-    border-radius: 20%;
-}
 .but1{
     padding-bottom: 10px;
 }
@@ -57,10 +55,10 @@ border-top-left-radius: 50% -50px;
     justify-content: center;
   }
 
-  .gallery img {
-    width: 500px; /* Измененная ширина */
-    height: 300px; /* Измененная высота */
+  .gallery>div>img {
+    max-width: 100%;
     margin: 10px;
+    padding-right: 10px;
     opacity: 1;
     transition: opacity 0.5s ease; /* Плавный переход для непрозрачности */
   }
