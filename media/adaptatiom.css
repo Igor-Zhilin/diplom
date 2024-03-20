@@ -1,5 +1,58 @@
+
+@media (max-width: 1200px) {
+    .additional {
+        width: 66.5%; 
+        max-width: 100%; 
+        height: auto; 
+        margin-top: 10px; 
+        opacity: 0;
+        transition: opacity 0.5s ease; 
+      }
+}
+
+@media (max-width: 1100px) {
+    .text{
+        margin-left: 20px;
+    }
+}
+@media (max-width: 992px) {
+    .additional {
+        width: 100%; 
+        max-width: 100%; 
+        height: auto; 
+        margin-top: 10px; 
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+}
+
 @media (max-width: 900px) {
     .main_png {
         display: none;
     }
+    .city_but>div>button{
+        font-size: 15px;
+    }
+    .flex-container {
+        flex-direction: column;
+      }
+      
+      
+}
+
+@media (max-width: 800px) {
+
+    .city_but{
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .city_but>div{
+        padding-left: 50px;
+        padding-bottom: 15px;
+    }
+    .city_but>div>button{
+        font-size: 20px;
+    }
+      
 }

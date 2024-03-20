@@ -3,38 +3,34 @@ document.addEventListener('DOMContentLoaded', function () {
   const moreBtn = document.getElementById('moreBtn');
   const hideBtn = document.getElementById('hideBtn');
 
-  // Функция для загрузки дополнительных изображений
-  function loadMoreImages() {
-    const additionalImages = [
+ // Функция для загрузки дополнительных изображений
+function loadMoreImages() {
+  const additionalImages = [
       './images/image7.jpg',
       './images/image8.jpg',
       './images/image9.jpg',
       './images/image10.jpg',
       './images/image11.jpg'
-
       // Добавьте пути к дополнительным изображениям здесь
-    ];
+  ];
 
-    additionalImages.forEach(image => {
+  additionalImages.forEach(image => {
       const img = document.createElement('img');
       img.src = image;
       img.alt = 'Дополнительное изображение';
-      img.style.width = '500px'; /* Измененная ширина */
-      img.style.height = '300px'; /* Измененная высота */
-      img.style.margin = '10px';
       img.classList.add('additional'); // Добавляем класс для дополнительных изображений
       gallery.appendChild(img);
 
       // Задаем таймаут для задержки и плавного появления
       setTimeout(() => {
-        img.classList.add('visible');
+          img.classList.add('visible');
       }, 10);
-    });
+  });
 
-    moreBtn.style.display = 'none'; // Скрыть кнопку "Еще"
-    hideBtn.style.display = 'inline-block'; // Показать кнопку "Скрыть"
-    hideBtn.style.margin = '10px auto'; // Установить автоматические отступы по верхнему и нижнему краям
-  }
+  moreBtn.style.display = 'none'; // Скрыть кнопку "Еще"
+  hideBtn.style.display = 'inline-block'; // Показать кнопку "Скрыть"
+  hideBtn.style.margin = '10px auto'; // Установить автоматические отступы по верхнему и нижнему краям
+}
 
   // Функция для скрытия дополнительных изображений
   function hideImages() {
@@ -67,23 +63,28 @@ function openModal(city) {
   switch(city) {
     case 'Белгород':
       cityInfo.textContent = "Белгород — административный центр Белгородской области.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
+      cityInfo.style.maxWidth = "700px"; // Установка максимальной ширины текста
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:300px"></embed>';
       break;
     case 'Санкт-Петербург':
       cityInfo.textContent = "Санкт-Петербург — город федерального значения, культурная столица России.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
+      cityInfo.style.maxWidth = "700px"; // Установка максимальной ширины текста
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:300px"></embed>';
       break;
-      case 'Воронеж':
-      cityInfo.textContent = "Вороонеж — город на юге Центральной России, административный центр Воронежской области.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
+    case 'Воронеж':
+      cityInfo.textContent = "Воронеж — город на юге Центральной России, административный центр Воронежской области.";
+      cityInfo.style.maxWidth = "700px"; // Установка максимальной ширины текста
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:300px"></embed>';
       break;
-      case 'Калининград':
-      cityInfo.textContent = "Калининграад — город в России, административный центр Калининградской области, являющийся самым западным областным центром Российской Федерации.";
-      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:700px;height:400px"></embed>';
+    case 'Калининград':
+      cityInfo.textContent = "Калининград — город в России, административный центр Калининградской области, являющийся самым западным областным центром Российской Федерации.";
+      cityInfo.style.maxWidth = "700px"; // Установка максимальной ширины текста
+      cityMap.innerHTML = '<embed src="https://yandex.ru/map-widget/v1/?um=constructor%3A9452beb4756ad676ebfc3efdea140aae5f08500aac1c0ecce585c0334eb18286&amp;source=constructor" style="width:100%;height:300px"></embed>';
       break;
     // Для других городов аналогично добавьте нужные информацию и embed
     default:
       cityInfo.textContent = "Информация о городе временно недоступна.";
+      cityInfo.style.maxWidth = "700px"; // Установка максимальной ширины текста
       cityMap.innerHTML = "Карта временно недоступна.";
   }
 

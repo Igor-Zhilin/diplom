@@ -6,11 +6,13 @@
     margin-top: 10px;
     cursor: pointer;
     border-radius: 10px; /* Скругление углов */;
+    user-select: none;
   }
   
   .answer {
     display: none;
     font-size: 20px; /* Увеличение размера текста */
+    user-select: none;
   }
   h2{
     text-align: center;
@@ -18,5 +20,6 @@
 
   }
   .grani_faq{
-    margin: 20px;
+margin-bottom: 20px;
+
   }

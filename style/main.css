@@ -16,7 +16,19 @@
 .but1{
     padding-bottom: 10px;
 }
+.additional {
+  width: 100%; /* Занимает всю доступную ширину */
+  max-width: 100%; /* Максимальная ширина для адаптивности */
+  height: auto; /* Автоматическая высота */
+  margin-top: 10px; /* Отступ сверху */
+  opacity: 0;
+  transition: opacity 0.5s ease; /* Плавный переход для непрозрачности */
 
+}
+
+.additional.visible {
+  opacity: 1;
+}
 nav.info{
 background-color: #ffa500;
 border-top-left-radius: 50% -50px;
@@ -57,14 +69,8 @@ border-top-left-radius: 50% -50px;
 
   .gallery>div>img {
     max-width: 100%;
-    margin: 10px;
-    padding-right: 10px;
-    opacity: 1;
     transition: opacity 0.5s ease; /* Плавный переход для непрозрачности */
-  }
-
-  .additional {
-    opacity: 0; /* Изначальная непрозрачность для дополнительных изображений */
+    margin-top: 10px;
   }
 
   #moreBtn {
@@ -138,11 +144,15 @@ button {
         display: flex;
       }
       
-      .city-map {
-        flex: 1;
+      .flex-container>.city-map {
+        flex: 1 !important;
+        width: 100% !important;
+        min-width: 400px !important; /* Минимальная ширина карты */
+        height: 300px !important;
       }
       
       .city-info {
+
         flex: 2;
         font-size: 20px; /* Увеличиваем размер текста на 25px */
       }
